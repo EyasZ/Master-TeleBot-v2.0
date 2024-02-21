@@ -1,0 +1,30 @@
+{
+    "collectionPermissions": [
+      {
+        "id": "offers",
+        "read": ["Admin", "Member","Visitor"],
+        "write": ["Admin"]
+      },
+      {
+        "id": "products",
+        "read": ["Admin", "Member","Visitor"],
+        "write": ["Admin"]
+      },
+      {
+        "id": "transactions",
+        "read": ["Admin", "Member","Visitor"],
+        "write": ["Admin"]
+      },
+      {
+        "id": "users",
+        "read": ["Admin", "Member","Visitor"],
+        "write": ["Admin"]
+      },
+      {
+        "id": "users_carts",
+        "read": ["Admin", "Member","Visitor"],
+        "write": ["Admin"]
+      }
+
+    ]
+  }

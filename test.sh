@@ -1,0 +1,1 @@
+curl -L -X POST "https://velo-postgres-db-cacacapca-uc.a.run.app/schemas/list" -H "Content-Type: application/json" --data-raw "{\"requestContext\": {\"settings\": {\"secretKey\": \"ourLittleSecret\"},\"role\": \"OWNER\"}}"
