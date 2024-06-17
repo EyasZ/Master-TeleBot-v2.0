@@ -1,9 +1,8 @@
 # Eyezmiedia Bot
-Un bot su commissione da parte di Eyezmiedia, per la vendita di prodotti online.
+A commissioned bot by Eyezmiedia for selling products online.
 
-## Configurazione
-La configurazione è semplice.
-Tutte le variabili (Api ID, Bot Token, etc...) sono contenute all'interno del file `config.ini`, che dev'essere riempito con i mancanti dati che si possono ottenere da Telegram.
+## Configuration
+The configuration is simple. All variables (Api ID, Bot Token, etc...) are contained within the config.ini file, which must be filled in with the missing data obtainable from Telegram.
 
 ```ini
 [pyrogram]
@@ -31,52 +30,51 @@ root = translations
 fallback = en_US
 ```
 
-Inoltre va creata la cartella `sessions`, dove Pyrogram scriverà la sessione, appunto, per il bot.
+Additionally, the sessions folder must be created, where Pyrogram will write the session for the bot.
 
-Tutto il bot è stato testato con Python 3.8 64-bit. Una versione più obsoleta non è compatibile in quanto è usato il [warlus operator](https://docs.python.org/3/whatsnew/3.8.html) in alcune parti del codice. Il codice può comunque essere reso per python 3.6 senza troppi problemi, ma questa pratica è ovviamente sconsigliata.
+The entire bot has been tested with Python 3.8 64-bit. An older version is not compatible as the walrus operator is used in some parts of the code. The code can still be made compatible with Python 3.6 without too many issues, but this practice is obviously not recommended.
 
-Tutti i pacchetti da installare sono nel file `requirements.txt`. Basta fare `pip install -r requirements.txt` per installare tutti i pacchetti alla versione corretta.
+All packages to be installed are in the requirements.txt file. Simply run pip install -r requirements.txt to install all packages at the correct version.
 
 ## Database
-Per il database è stato utilizzato SQLite, un database leggero, facilmente integrabile e molto portabile. SQLite è perfetto per database di piccola grandezza come questo.
-Il nome del file predefinito è `database.db`.
+SQLite has been used for the database, a lightweight, easily integrable, and very portable database. SQLite is perfect for small-sized databases like this one. The default file name is database.db.
 
-L'immagine riporta la struttura del database
+The image shows the structure of the database.
 
 ![](https://i.imgur.com/131n7Pi.png)
 
-##### Tabella users
-- *id* e *name* -> Corrispettivo nel database di Telegram
-- *is_seller* -> Se è un seller
-- *channel_id* -> ID del canale del seller
-- *status* -> Stato dell'utente in un momento specifico
+####Users Table
+id and name -> Corresponding to the database of Telegram
+is_seller -> Whether the user is a seller
+channel_id -> ID of the seller's channel
+status -> User's status at a specific moment
 
-##### Tabella products
-- *id* -> Tag univoco alfanumerico di 8 cifre
-- *name* -> Nome del prodotto
-- *cost* -> Costo del prodotto
-- *description* -> Descrizione del prodotto
-- *photo_id* -> ID corrispettivo nel database di Telegram
-- *photo_link* -> Link imgur dell'immagine
-- *seller_id* -> ID dell'utente venditore
+####Products Table
+id -> Unique alphanumeric 8-digit tag
+name -> Product name
+cost -> Product cost
+description -> Product description
+photo_id -> Corresponding ID in Telegram's database
+photo_link -> Imgur link of the image
+seller_id -> ID of the seller user
 
-##### Tabella offers
-- *id* -> Tag univoco alfanumerico di 8 cifre
-- *product_id* -> ID del prodotto
-- *seller_id* -> ID dell'utente venditore
-- *buyer_id* -> ID dell'utente compratore
-- *cost* -> Prezzo in offerya
-- *valid* -> Se è valida
+####Offers Table
+id -> Unique alphanumeric 8-digit tag
+product_id -> Product ID
+seller_id -> Seller user ID
+buyer_id -> Buyer user ID
+cost -> Price in offer
+valid -> Whether it is valid
 
-##### Tabella transactions
-- *id* -> Tag univoco alfanumerico di 8 cifre
-- *product_id* -> ID del prodotto
-- *seller_id* -> ID dell'utente venditore
-- *buyer_id* -> ID dell'utente compratore
-- *cost* -> Soldi spesi
-- *is_offer* -> Se ha pagato con una offerta
-- *date* -> Data nel formato UNIX di quando è stato fatto l'acquisto
-- *address* -> Indirizzo per la spedizione
+####Transactions Table
+id -> Unique alphanumeric 8-digit tag
+product_id -> Product ID
+seller_id -> Seller user ID
+buyer_id -> Buyer user ID
+cost -> Money spent
+is_offer -> Whether it was paid with an offer
+date -> Date in UNIX format when the purchase was made
+address -> Shipping address
 
 <br>
 
